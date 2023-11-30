@@ -1,0 +1,22 @@
+Source: coc-nvim
+Section: editors
+Priority: optional
+Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-vim-addon
+Standards-Version: 4.6.0
+Homepage: https://github.com/neoclide/coc.nvim
+Vcs-Browser: https://github.com/dimitry-ishenko-vim/coc-nvim
+Vcs-Git: https://github.com/dimitry-ishenko-vim/coc-nvim.git
+Rules-Requires-Root: no
+
+Package: coc-nvim
+Architecture: all
+Depends: nodejs (>= 14.14), ${misc:Depends}, ${vim-addon:Depends}
+Description: NodeJS extension host and language server host for vim & neovim
+ Features:
+   * Fast: separate NodeJS process that does not slow down vim.
+   * Reliable: typed language, tested with CI.
+   * Featured: all LSP 3.16 features are supported.
+   * Flexible: extend functionality through CoC extensions.

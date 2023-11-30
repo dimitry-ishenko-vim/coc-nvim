@@ -1,0 +1,7 @@
+autoload bin build doc lua plugin usr/share/coc-nvim
+
+debian/coc.vim etc/skel/.vim/plugin
+debian/coc.vim etc/skel/.config/nvim/plugin
+
+debian/coc-settings.json etc/skel/.vim
+debian/coc-settings.json etc/skel/.config/nvim

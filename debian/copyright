@@ -1,0 +1,11 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: coc.nvim
+Source: https://github.com/neoclide/coc.nvim
+
+Files: *
+Copyright: 2018-2023 Qiming Zhao <chemzqm@gmail.com>
+License: MIT
+
+Files: debian/*
+Copyright: 2023 Dimitry Ishenko <dimitry.ishenko@gmail.com>
+License: GPL-3.0+
