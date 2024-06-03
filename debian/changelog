@@ -1,3 +1,20 @@
+coc-nvim (2024.05.29-f0ce9ae23-1) unstable; urgency=medium
+
+  * commit 00bd79e0a5d11136e016538e2ffdb0a153e07308
+  * rm .release
+  * commit 84ce03120925c980288665028aedcf06f6cb837e
+  * Add .release to gitignore
+  * commit 9190bfefc6ce8123e550276edd7dd34834cc6e09
+  * commit ede39ea981f47222c5b1185592df7bb1875cec6d
+  * commit 2f312370bb01971b3095d404ca4a5b4b4d08006d
+  * commit 77ae2d43c16e69746a3e097d8d2f960a8d962593
+  * commit 2ec3166653f76acd42b0d9f62161c4db2673c204
+  * commit 48bae5f48c274e41637b8d7e4cfede1a0fe15dea
+  * commit 2c7e7156f739e61b99c53662a968bb9213badbc4
+  * commit c3ae5c3bf4ccf2bbd79405521c63f5ffc151ab8e
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 02 Jun 2024 20:50:39 -0400
+
 coc-nvim (0.0.82-180-g7b9e1ef0-1) unstable; urgency=medium
 
   [ Qiming Zhao ]
