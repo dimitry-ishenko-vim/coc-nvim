@@ -8,7 +8,7 @@
     <a href="https://github.com/neoclide/coc.nvim/actions"><img alt="Actions" src="https://img.shields.io/github/actions/workflow/status/neoclide/coc.nvim/ci.yml?style=flat-square&branch=master"></a>
       <a href="https://codecov.io/gh/neoclide/coc.nvim"><img alt="Codecov Coverage Status" src="https://img.shields.io/codecov/c/github/neoclide/coc.nvim.svg?style=flat-square"></a>
     <a href="doc/coc.txt"><img alt="Doc" src="https://img.shields.io/badge/doc-%3Ah%20coc.txt-brightgreen.svg?style=flat-square"></a>
-    <a href="https://matrix.to/#/#coc.nvim:matrix.org"><img alt="Gitter" src="https://img.shields.io/gitter/room/neoclide/coc.nvim.svg?style=flat-square"></a>
+    <a href="https://matrix.to/#/#coc.nvim:matrix.org"><img alt="Matrix" src="https://img.shields.io/matrix/coc.nvim%3Amatrix.org?style=flat-square"></a>
   </p>
 </p>
 
@@ -29,7 +29,7 @@ _Custom popup menu with snippet support_
 
 Make sure use Vim >= 8.1.1719 or Neovim >= 0.4.0.
 
-Install [nodejs](https://nodejs.org/en/download/) >= 14.14:
+Install [nodejs](https://nodejs.org/en/download/) >= 16.18.0:
 
 ```bash
 curl -sL install-node.vercel.app/lts | bash
@@ -93,6 +93,7 @@ possible to avoid conflict with your other plugins.
 command like`:verbose imap <tab>` to make sure that your keymap has taken effect.
 
 ```vim
+" https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.vim
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
@@ -261,6 +262,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 NOTE: This only works in Neovim 0.7.0dev+.
 
 ```lua
+-- https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.lua
+
 -- Some servers have issues with backup files, see #649
 vim.opt.backup = false
 vim.opt.writebackup = false
@@ -468,8 +471,8 @@ Try these steps if you experience problems with coc.nvim:
 
 - Have a question? Start a discussion on [GitHub Discussions](https://github.com/neoclide/coc.nvim/discussions).
 - File a bug in [GitHub Issues](https://github.com/neoclide/coc.nvim/issues).
-- Chat with us on [Gitter](https://matrix.to/#/#coc.nvim:matrix.org).
-- 中文用户请到 [中文 gitter](https://matrix.to/#/#neoclide_coc-cn:gitter.im) 讨论
+- Chat with us on [Matrix](https://matrix.to/#/#coc.nvim:matrix.org).
+- 中文用户请到 [中文 Matrix](https://matrix.to/#/#neoclide_coc-cn:gitter.im) 讨论
 
 ## Backers
 
