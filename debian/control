@@ -13,7 +13,7 @@ Rules-Requires-Root: no
 
 Package: coc-nvim
 Architecture: all
-Depends: nodejs (>= 14.14), ${misc:Depends}, ${vim-addon:Depends}
+Depends: nodejs (>= 16.18.0), ${misc:Depends}, ${vim-addon:Depends}
 Description: NodeJS extension host and language server host for vim & neovim
  Features:
    * Fast: separate NodeJS process that does not slow down vim.
