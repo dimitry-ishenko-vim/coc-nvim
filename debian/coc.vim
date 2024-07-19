@@ -1,6 +1,8 @@
 function HeaderSource()
     let l:path = CocRequest("clangd", "textDocument/switchSourceHeader", { "uri": "file://" .. expand("%:p") })
-    exec "edit " .. substitute(l:path, "^file://", "", "")
+    if l:path != "v:null"
+        exec "edit " .. substitute(l:path, "^file://", "", "")
+    endif
 endfunction
 
 function ShowDoc()
