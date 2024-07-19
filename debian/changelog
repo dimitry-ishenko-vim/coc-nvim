@@ -1,3 +1,10 @@
+coc-nvim (2024.05.29-f0ce9ae23-3) unstable; urgency=medium
+
+  * Add \gs map to switch between header/source
+  * Add clangd and cmake language servers
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 19 Jul 2024 01:30:17 -0400
+
 coc-nvim (2024.05.29-f0ce9ae23-2) unstable; urgency=medium
 
   * Use different diag symbols
