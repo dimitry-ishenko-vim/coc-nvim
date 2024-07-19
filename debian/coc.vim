@@ -1,3 +1,8 @@
+function SourceHeader()
+    let l:path = CocRequest("clangd", "textDocument/switchSourceHeader", { "uri": "file://" .. expand("%:p") })
+    exec "edit " .. substitute(l:path, "^file://", "", "")
+endfunction
+
 inoremap <silent><expr> <tab>   coc#pum#visible() ? coc#pum#next(1)  : "\<tab>"
 inoremap <silent><expr> <s-tab> coc#pum#visible() ? coc#pum#prev(1)  : "\<c-h>"
 inoremap <silent><expr> <cr>    coc#pum#visible() ? coc#pum#confirm(): "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
@@ -11,6 +16,7 @@ nnoremap <silent> ]g <plug>(coc-diagnostic-next)
 nnoremap <silent> gd <plug>(coc-definition)
 nnoremap <silent> gi <plug>(coc-implementation)
 nnoremap <silent> gr <plug>(coc-references)
+nnoremap <silent> gs :call SourceHeader()<cr>
 nnoremap <silent> gy <plug>(coc-type-definition)
 
 nnoremap <leader>rn <plug>(coc-rename)
