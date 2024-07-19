@@ -1,3 +1,9 @@
+coc-nvim (2024.05.29-f0ce9ae23-4) unstable; urgency=medium
+
+  * coc.vim: add more maps and functions
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 19 Jul 2024 16:13:52 -0400
+
 coc-nvim (2024.05.29-f0ce9ae23-3) unstable; urgency=medium
 
   * Add \gs map to switch between header/source
