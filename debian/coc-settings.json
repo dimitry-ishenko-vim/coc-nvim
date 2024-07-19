@@ -2,5 +2,23 @@
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
-  "diagnostic.hintSign": ""
+  "diagnostic.hintSign": "",
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "filetypes": ["c", "cc", "cpp", "c++"],
+      "rootPatterns": [".ccls", "build", ".git"],
+      "args": ["--compile-commands-dir=build"]
+    },
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": ["build"],
+      "initializationOptions": {
+        "buildDirectory": "build"
+      }
+    }
+  },
+  "semanticTokens.enable": true,
+  "semanticTokens.filetypes": ["c", "cc", "cpp", "c++"]
 }
