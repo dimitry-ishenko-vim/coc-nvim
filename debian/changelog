@@ -1,3 +1,9 @@
+coc-nvim (2024.05.29-f0ce9ae23-2) unstable; urgency=medium
+
+  * Use different diag symbols
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 18 Jul 2024 20:10:48 -0400
+
 coc-nvim (2024.05.29-f0ce9ae23-1) unstable; urgency=medium
 
   * commit 00bd79e0a5d11136e016538e2ffdb0a153e07308
