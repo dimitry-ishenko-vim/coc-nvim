@@ -1,3 +1,9 @@
+coc-nvim (2024.05.29-f0ce9ae23-5) unstable; urgency=medium
+
+  * HeaderSource(): check if file exists
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 19 Jul 2024 23:06:08 -0400
+
 coc-nvim (2024.05.29-f0ce9ae23-4) unstable; urgency=medium
 
   * coc.vim: add more maps and functions
