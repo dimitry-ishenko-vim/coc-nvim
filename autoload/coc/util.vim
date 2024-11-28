@@ -286,12 +286,10 @@ function! coc#util#vim_info()
         \ 'guicursor': &guicursor,
         \ 'pumwidth': exists('&pumwidth') ? &pumwidth : 15,
         \ 'tabCount': tabpagenr('$'),
-        \ 'updateHighlight': has('nvim-0.5.0') || has('textprop') ? v:true : v:false,
         \ 'vimCommands': get(g:, 'coc_vim_commands', []),
         \ 'sign': exists('*sign_place') && exists('*sign_unplace'),
         \ 'ambiguousIsNarrow': &ambiwidth ==# 'single' ? v:true : v:false,
         \ 'textprop': has('textprop') ? v:true : v:false,
-        \ 'virtualText': has('nvim-0.5.0') || has('patch-9.0.0067') ? v:true : v:false,
         \ 'dialog': 1,
         \ 'semanticHighlights': coc#util#semantic_hlgroups()
         \}
@@ -515,18 +513,25 @@ function! coc#util#get_config_home()
     return resolve($VIMCONFIG)
   endif
   if has('nvim')
+    let appname = empty($NVIM_APPNAME) ? 'nvim' : $NVIM_APPNAME
     if exists('$XDG_CONFIG_HOME')
-      return resolve($XDG_CONFIG_HOME."/nvim")
+      return resolve($XDG_CONFIG_HOME."/".appname)
     endif
     if s:is_win
-      return resolve($HOME.'/AppData/Local/nvim')
+      return resolve($HOME.'/AppData/Local/'.appname)
     endif
-    return resolve($HOME.'/.config/nvim')
+    return resolve($HOME.'/.config/'.appname)
   else
     if s:is_win
       return resolve($HOME."/vimfiles")
     endif
-    return resolve($HOME.'/.vim')
+    if isdirectory(resolve($HOME.'/.vim'))
+      return resolve($HOME.'/.vim')
+    endif
+    if exists('$XDG_CONFIG_HOME') && isdirectory(resolve($XDG_CONFIG_HOME))
+      return resolve($XDG_CONFIG_HOME.'/vim')
+    endif
+    return resolve($HOME.'/.config/vim')
   endif
 endfunction
 

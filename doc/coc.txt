@@ -1361,7 +1361,7 @@ Selection range function:~
 CODE LENS 						*coc-code-lens*
 
 Code lens feature shows additional information above or after specific lines.
-Works best on nvim >= 0.6.0 and vim >= 9.0.0438. On older vim, some
+Works best on nvim >= 0.8.0 and vim >= 9.0.0438. On older vim, some
 configurations may not work.
 
 CodeLens are not shown by default, use |coc-config-codeLens-enable| to enable,
@@ -2171,6 +2171,11 @@ coc#pum#visible() 					*coc#pum#visible()*
 	Check if customized popupmenu is visible like |pumvisible()| does.
 	Return 1 when popup menu is visible.
 
+coc#pum#has_item_selected()				*coc#pum#has_item_selected*
+
+	Check if there is a completion item selected in the popup menu.
+	Return 1 when there has been a completion item selected.
+
 coc#pum#next({insert}) 					*coc#pum#next()*
 
 	Select next item of customized popupmenu, insert word when {insert} is
@@ -2463,8 +2468,9 @@ Acceptable {action} names for |CocAction()| and |CocActionAsync()|.
 
 "diagnosticToggle" [{enable}]	 			*CocAction('diagnosticToggle')*
 
-	Enable/disable diagnostics on the fly, not work when `displayByAle` is
-	enabled. You can toggle by specifying {enable}. {enable} can be 0 or 1
+	Enable/disable diagnostics on the fly. This setting is ignored if
+	`displayByAle` is enabled. You can toggle by specifying {enable}.
+	{enable} can be 0 or 1
 
 "diagnosticToggleBuffer" [{bufnr}] [{enable}] 		*CocAction('diagnosticToggleBuffer')*
 
@@ -2960,7 +2966,7 @@ COMMANDS						*coc-commands*
 
 :CocConfig						*:CocConfig*
 
-	Edit the user config file `.vim/coc-settings.json` in
+	Edit the user config file `coc-settings.json` in
 	|coc#util#get_config_home()|
 
 :CocLocalConfig						*:CocLocalConfig*
@@ -3979,7 +3985,7 @@ QuickPick related (available when created by |coc-dialog-quickpick|).
 <C-b>               - scroll backward quickpick list.
 <C-j> <C-n> <down>  - move to next item in quickpick list.
 <C-k> <C-p> <up>    - move to previous item in quickpick list.
-<C-space>           - toggle selection of current item in quickpick list when
+<C-t> <C-space>     - toggle selection of current item in quickpick list when
 canSelectMany is supported.
 
 Note on neovim, other insert mode key-mappings could work.

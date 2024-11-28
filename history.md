@@ -1,3 +1,38 @@
+# 2024-10-25
+
+- Mention [davidosomething/coc-diagnostics-shim.nvim](https://github.com/davidosomething/coc-diagnostics-shim.nvim) as alternative to ALE for diagnostics display.
+
+# 2024-08-28
+
+- Add configuration `codeLens.display`
+
+# 2024-08-20
+
+- Add `CocAction('removeWorkspaceFolder')`.
+- Expanded the quick pick API in typings
+
+# 2024-08-12
+
+- Added `coc.preferences.formatterExtension` configuration
+
+# 2024-07-04
+
+- Added `NVIM_APPNAME` support
+
+# 2024-06-27
+
+- Added `inlayHint.position` configuration, with `inline` and `eol` options
+
+# 2024-06-20
+
+- Added `coc.preferences.extensionUpdateUIInTab` to open `CocUpdate` UI in tab
+
+# 2024-05-29
+
+- Break change: increase minimum vim/nvim version requirement
+  - vim 9.0.0438
+  - nvim 0.8.0
+
 # 2024-05-14
 
 - Added `suggest.reTriggerAfterIndent` to control re-trigger or not after indent changes

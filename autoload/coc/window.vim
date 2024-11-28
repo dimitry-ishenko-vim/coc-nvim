@@ -18,11 +18,9 @@ function! coc#window#get_cursor(winid) abort
   if exists('*nvim_win_get_cursor')
     return nvim_win_get_cursor(a:winid)
   endif
-  if has('patch-8.2.1727')
-    let pos = getcurpos(a:winid)
-    return [pos[1], pos[2] - 1]
-  endif
-  return coc#api#exec('win_get_cursor', [a:winid])
+
+  let pos = getcurpos(a:winid)
+  return [pos[1], pos[2] - 1]
 endfunction
 
 " Check if winid visible on current tabpage
@@ -196,9 +194,9 @@ function! coc#window#close(winid) abort
   endif
 endfunction
 
-function! coc#window#visible_range(bufnr) abort
-  let winid = bufwinid(a:bufnr)
-  if winid == -1
+function! coc#window#visible_range() abort
+  let winid = win_getid()
+  if winid == 0
     return v:null
   endif
   let info = getwininfo(winid)[0]
