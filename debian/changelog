@@ -1,3 +1,16 @@
+coc-nvim (2024.11.28-ebe7a08ec-1) unstable; urgency=medium
+
+  [ Heyward Fann ]
+  * commit aacbbcad23b62dd4b4f992ab716a222e7d3a21eb
+  * commit 9fd857818977ce9f9f6f7271034fc917dede7035
+  * commit 9c25f2f7cd2f2cbcb1d424eb951846966f4cfaae
+  * commit c5ffbb3c6b748d3359d99c4452ed74a80d293194
+  * commit 39cd270fdd9edb6d51e5aece361d561d9961d796
+  * commit 33d0a5233cf68e6f54a78e3c3c20958c96f3e4cc
+  * commit 56632971ba3a5469ce33c676a9ccbc5ef89c58f3
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 28 Nov 2024 18:53:40 -0500
+
 coc-nvim (2024.05.29-f0ce9ae23-5) unstable; urgency=medium
 
   * HeaderSource(): check if file exists
