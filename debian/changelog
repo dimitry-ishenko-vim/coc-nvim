@@ -1,3 +1,19 @@
+coc-nvim (2025.02.28.1-1) unstable; urgency=medium
+
+  [ Qiming Zhao ]
+  * commit 7e303349aaf0058dc87aaff953a1697fb5e65930
+  * commit 4118fb2d3d77434a2e76aa12b8119b997b88c945
+  * commit 57705289d2a17aac28271f701adc09eb39a40923
+  * commit 9ca54c0e8339b11296c7fdbb5131a410a7166f9e
+  * commit 1e177c40e0c5ef3e305e3492ea9fc007cd276739
+
+  [ Heyward Fann ]
+  * commit 89cd1a2333e6eac2cc173e117d354d1b02b74057
+  * commit baac60ac1676cd5640648af9f07c15be24041a3e
+  * commit a6e54aedbc1a588f514801e51bf2c9e62aea5e6e
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 28 Feb 2025 14:01:12 -0500
+
 coc-nvim (2024.11.28-ebe7a08ec-1) unstable; urgency=medium
 
   [ Heyward Fann ]
