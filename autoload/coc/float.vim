@@ -127,6 +127,52 @@ function! coc#float#create_float_win(winid, bufnr, config) abort
     " happens when using getchar() #3921
     return []
   endtry
+
+  " Calculate position when relative is editor
+  if get(a:config, 'relative', '') ==# 'editor'
+    let top = get(a:config, 'top', v:null)
+    let bottom = get(a:config, 'bottom', v:null)
+    let left = get(a:config, 'left', v:null)
+    let right = get(a:config, 'right', v:null)
+
+    if top isnot v:null || bottom isnot v:null || left isnot v:null || right isnot v:null
+      let height = &lines
+      let width = &columns
+
+      " Calculate row
+      let calc_row = a:config.row
+      if bottom isnot v:null
+        let calc_row = height - bottom - a:config.height - 2
+      elseif top isnot v:null
+        let calc_row = top
+      endif
+
+      " Calculate col
+      let calc_col = a:config.col
+      if right isnot v:null
+        let calc_col = width - right - a:config.width - 3
+      elseif left isnot v:null
+        let calc_col = left
+      endif
+
+      " Check if window would overlap cursor position
+      let pos = screenpos(0, line('.'), col('.'))
+      let currow = pos.row - 1
+      let curcol = pos.col - 1
+      let win_top = calc_row
+      let win_bottom = win_top + a:config.height + 2
+      let win_left = calc_col
+      let win_right = win_left + a:config.width + 3
+
+      " If window would overlap cursor, switch to cursor relative
+      if currow >= win_top && currow <= win_bottom && curcol >= win_left && curcol <= win_right
+        let a:config.relative = 'cursor'
+      else
+        let a:config.row = calc_row
+        let a:config.col = calc_col
+      endif
+    endif
+  endif
   let lnum = max([1, get(a:config, 'index', 0) + 1])
   let zindex = get(a:config, 'zindex', 50)
   " use exists
@@ -558,8 +604,10 @@ endfunction
 " Close float window by id
 function! coc#float#close(winid, ...) abort
   let noautocmd = get(a:, 1, 0)
-  call coc#float#close_related(a:winid)
-  call s:close_win(a:winid, noautocmd)
+  if a:winid >= 0
+    call coc#float#close_related(a:winid)
+    call s:close_win(a:winid, noautocmd)
+  endif
   return 1
 endfunction
 
@@ -641,9 +689,6 @@ function! coc#float#has_scroll() abort
 endfunction
 
 function! coc#float#scroll(forward, ...)
-  if !has('nvim-0.4.0') && !has('patch-8.2.0750')
-    throw 'coc#float#scroll() requires nvim >= 0.4.0 or vim >= 8.2.0750'
-  endif
   let amount = get(a:, 1, 0)
   let winids = filter(coc#float#get_float_win_list(), 'coc#float#scrollable(v:val) && getwinvar(v:val,"kind","") !=# "pum"')
   if empty(winids)
