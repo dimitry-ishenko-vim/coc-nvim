@@ -1,3 +1,50 @@
+coc-nvim (2025.05.01-1) unstable; urgency=medium
+
+  [ Qiming Zhao ]
+  * commit 7222ade28cbd84b85446da38afc438a5daf2b20c
+
+  [ chemzqm ]
+  * 04567f5 chore(api): no need to use v:null
+  * f75b684 fix(snippet): use feedkeys function to avoid remap
+
+  [ Qiming Zhao ]
+  * commit f75b684e54af5a1f5d5c02a8bc363abc7f2e984e
+  * commit d4b44b3723a5928ee797aa1ac2c585c5d5bd6ee4
+
+  [ chemzqm ]
+  * d2edf3f feat(list): level argument for diagnostics list
+  * 22130a1 perf(document): check sha256 on vim9 CursorHold
+  * 317e12e fix(vim): work with autocmds defined in vim9script
+
+  [ Qiming Zhao ]
+  * commit f61c81998e185e67d1263944276a8f1d968690c7
+  * remove Readme.md
+
+  [ chemzqm ]
+  * b3a3ffc feat(events): add WindowVisible event
+  * 63e808a fix(configuration): preserve memory configuration
+  * 1987448 fix(vtext): fix possible wrong line for indent
+  * 5866164 refactor(provider): add extension name to providers
+  * 1e9ecad Use listener_add for buffer changes on vim (#5292)
+  * 3c39bb7 feat(documents): support editor.codeActionsOnSave
+
+  [ Qiming Zhao ]
+  * commit d1ae7678aeb97581638fd0747dc11bab3851709a
+  * commit 7a5b7710af45f202a1ac9d3dfc2c88cf85406620
+  * commit 48cad05177bfee88a52de6873f5e8383ced11431
+  * commit 298807bddadcfcd940a8cd40aa010c3ee8ff699a
+  * commit 758692071ce9ad178f30a762c2169d369dae95e3
+  * commit dc5e68a5e870c675699606649cfd797230e9661e
+  * commit fc5e3047ed4d14f57bb031521318ff6874a722d3
+  * commit 7f2d2918917678a12ad17d983de562be3d40333c
+  * commit 1e24516255794de0c7ae44367ff3bc5eb1cc6c0f
+  * commit 100eb94ea4cb94c929ce640632291c4410ddda7f
+  * commit 130e60fc46adfc558f692e29cf04f25938246e29
+  * commit 7a756858e7d9567186c73a51a0fe3633dc13b118
+  * commit 7b8be9ea191af65a19a61b320f572df9998031f8
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 04 May 2025 13:54:12 -0400
+
 coc-nvim (2025.02.28.1-1) unstable; urgency=medium
 
   [ Qiming Zhao ]
