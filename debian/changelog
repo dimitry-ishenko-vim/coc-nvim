@@ -1,3 +1,10 @@
+coc-nvim (2025.05.01-2) unstable; urgency=medium
+
+  * d/gbp.conf: not used
+  * Readme.md => README.md
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 04 May 2025 14:04:50 -0400
+
 coc-nvim (2025.05.01-1) unstable; urgency=medium
 
   [ Qiming Zhao ]
