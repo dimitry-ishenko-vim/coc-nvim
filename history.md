@@ -2,11 +2,132 @@
 
 Notable changes of coc.nvim:
 
+## 2025-04-25
+
+- Add `-level` argument support to diagnostics list.
+- Make lines event send before TextChange events on vim9.
+
+## 2025-04-23
+
+- Add configuration `inlayHint.maximumLength`, default to `0`
+
+## 2025-04-21
+
+- Add `WindowVisible` event to `events`.
+- Add `onVisible()` support to `BufferSyncItem`.
+- Improve inlay hint:
+    - Use lua and vim9 for virtual text api.
+    - Add `coc#vtext#set()` for set multiple virtual texts.
+    - Render all inlay hints for the first time.
+    - Use `WindowVisible` event.
+
+## 2025-04-18
+
+- Add `nvim.createAugroup()`, `nvim.createAutocmd()` and `nvim.deleteAutocmd()`.
+- Add `buffer` `once` and `nested` support to `workspace.registerAutocmd()`.
+- Not throw error from autocmd callback, log the error instead.
+- Add configuration `editor.autocmdTimeout`.
+
+## 2025-04-17
+
+- Support `$COC_VIM_CHANNEL_ENABLE` for enable channel log on vim9.
+- Add `nvim.callVim()`, `nvim.evalVim()` and `nvim.exVim()`.
+
+## 2025-04-15
+
+- Support 'title' for configuration `suggest.floatConfig` and `suggest.pumFloatConfig`.
+- Use timer for `CocStatusChange` autocmd to avoid cursor vanish caused by `redraws`.
+- Use vim9 script for api.vim and refactor related functions.
+- Add `coc#compat#call` for call api functions on vim or neovim.
+- Add `special` to interface `KeymapOption` (vim9 only).
+
+## 2025-04-06
+
+- Add `cmd` option to interface `KeymapOption`.
+- Add `KeymapOption` support to `workspace.registerLocalKeymap()`
+
+## 2025-04-04
+
+- Add `right_gravity` property to `VirtualTextOption`.
+
+## 2025-04-03
+
+- Add `disposables` argument to `workspace.registerAutocmd()`
+- Change behavior for failure autocmd request, echo message instead of throw
+  error.
+
+## 2025-04-02
+
+- Add method `window.getVisibleRanges()` to typings.
+- Break change: set `w:cocViewId` to upper case letters, see `:h w:cocViewId`
+
+## 2025-04-01
+
+- Add configuration `workspace.removeEmptyWorkspaceFolder` default to `false`.
+- Add configuration `editor.codeActionsOnSave`, similar to VSCode.
+
+## 2025-03-31
+
+- Change `placeHolder`to `placeholder` for `QuickPickOptions` like VSCode (old
+  option still works).
+- Change interface `DocumentSelector`, could also be `DocumentFilter` or
+  `string`, not only array of them.
+- Add `context.extensionUri` like VSCode.
+- Add `document` property to `DidChangeTextDocumentParams`, like VSCode.
+- Add `before()` and `after()` methods to `LinkedMap`, same as VSCode.
+- Add `onFocus` and `match()` to `DiagnosticPullOptions`.
+- Add `onFocus` to `DiagnosticPullMode` and export `DiagnosticPullMode`
+- Add interface `InlineValuesProvider`, `DiagnosticProvider` to typings.
+- Add missing properties to `LanguageClient` class, including
+  `createDefaultErrorHandler()`, `state` `middleware` `isInDebugMode`
+  `isRunning()` `dispose()` `getFeature()`
+
+## 2025-03-29
+
+- Add `bufnr` to `WinScrolled` event.
+
+## 2025-03-28
+
+- Improve vim9 highlight by vim9 script #5285.
+
+## 2025-03-27
+
+- Reworked snippets for UltiSnips options and actions support, see `:h coc-snippets` and #5282.
+
+## 2025-03-13
+
+- Add `coc.preferences.autoApplySingleQuickfix` configuration
+
+## 2025-03-07
+
+- Support `extensions.recommendations` configuration.
+- Support for UltiSnip options `t` `m` `s`.
+
+## 2025-03-05
+
+- Export method `workspace.fixWin32unixFilepath` for filepath convert.
+- Add commands `document.enableInlayHint` and `document.disableInlayHint`.
+- Refresh popup menu when completing incomplete sources.
+
+## 2025-03-04
+
+- Add VSCode command `workbench.action.openSettingsJson`.
+- Add `workspace.isTrusted` property.
+
+## 2025-03-03
+
+- Add command `workspace.openLocalConfig`.
+- Support vim built with win32unix enabled, including cygwin, git bash, WSL etc.
+
+## 2025-02-24
+
+- Configurations for file system watch, see `:h coc-config-fileSystemWatch`.
+
 ## 2025-02-23
 
 - All global properties works with extensions #5222.
 - Return true or false for boolean option on vim (same as neovim).
-- Support completion sources using vim9sciprt module.
+- Support completion sources using vim9script module.
 
 ## 2025-02-22
 
@@ -15,7 +136,7 @@ Notable changes of coc.nvim:
 ## 2025-02-21
 
 - To avoid unexpected signature help window close, signature help will be triggered after placeholder jump by default, when autocmd `CocJumpPlaceholder call CocActionAsync('showSignatureHelp')` not exists.
-- Support `global.formatFilepath` function for customize filepath displayed in symbols list.
+- Support `global.formatFilepath` function for customize filepath displayed in symbols & location list.
 
 ## 2025-02-20
 
@@ -817,7 +938,7 @@ Use `extensions` section for extension related configurations. Deprecated config
 - fix(language-client): configuration for configured server, closes #930
 - fix(diagnostic): clear diagnostics on filetype change
 - feat(plugin): add download & fetch modules
-- feat(plugin): add highligher module
+- feat(plugin): add highlighter module
 - feat(refactor): add `<Plug>(coc-refactor)` for refactor window
 - feat(extension): use mv module for folder rename
 - feat(extension): support install tagged extension
@@ -826,7 +947,7 @@ Use `extensions` section for extension related configurations. Deprecated config
 - feat(list): support `g:coc_quickfix_open_command`
 - feat(list): add eval action
 - feat(list): add --tab list option
-- feat(list): use highligher module for showHelp
+- feat(list): use highlighter module for showHelp
 - feat(terminal): add noa on window jump
 - feat(terminal): support vim8
 - feat(diagnostic): add diagnosticRelated support

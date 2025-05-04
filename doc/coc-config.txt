@@ -7,6 +7,7 @@ Core features
 	File system watch 			|coc-config-fileSystemWatch|
 	Extensions 				|coc-config-extensions|
 	Preferences 				|coc-config-preferences|
+	Editor 					|coc-config-editor|
 	Float factory 				|coc-config-floatFactory|
 	Float 					|coc-config-float|
 	Tree 					|coc-config-tree|
@@ -104,6 +105,13 @@ WORKSPACE
 
 	Scope: `application`, default: `true`
 
+"workspace.removeEmptyWorkspaceFolder"			*coc-config-workspace-removeEmptyWorkspaceFolder*
+
+	Automatically remove the workspace folder when no buffer associated
+	with it.
+
+	Scope: `application`, default: `false`
+
 ------------------------------------------------------------------------------
 FILESYSTEMWATCH 					*coc-config-fileSystemWatch*
 
@@ -149,6 +157,13 @@ EXTENSIONS
 	Open `CocUpdate` UI in new tab.
 
 	Scope: `application`, default: `false`
+
+"extensions.recommendations" 				*coc-config-extensions-recommendations*
+
+	List of extensions recommended for installation in the current project.
+	Only works as workspace folder configuration.
+
+	Scope: `resource`, default: `[]`
 
 ------------------------------------------------------------------------------
 PREFERENCES
@@ -229,9 +244,10 @@ PREFERENCES
 
 	Scope: `language-overridable`, default: `false`
 
-"coc.preferences.formatterExtension"			*coc-preferences-formatterExtension*
+"coc.preferences.formatterExtension" 			*coc-preferences-formatterExtension*
 
-	Extension used for formatting documents. When set to null, the formatter with highest priority is used.
+	Extension used for formatting documents. When set to null, the
+	formatter with highest priority is used.
 
 	Scope: `language-overridable`, default: `null`
 
@@ -301,6 +317,27 @@ PREFERENCES
 	Scope: `application`, default: `0`
 
 ------------------------------------------------------------------------------
+EDITOR
+							*coc-config-editor*
+							*coc-config-editor-codeActionsOnSave*
+
+"editor.codeActionsOnSave"
+
+	Run Code Actions for the buffer on save, normally source actions,
+	Example: `\"source.organizeImports\": \"always\"`,
+	|coc-preferences-willSaveHandlerTimeout| is used for timeout control.
+
+	Scope: `language-overridable`, default: `{}`
+
+							*coc-config-editor-autocmdTimeout*
+
+"editor.autocmdTimeout"
+
+	Timeout for execute request autocmd registered by coc extensions.
+
+	Scope: `application`, default: `1000`
+
+------------------------------------------------------------------------------
 FLOATfACTORY
 							*coc-config-floatFactory*
 "floatFactory.floatConfig"				*coc-config-floatFactory-floatConfig*
@@ -326,7 +363,7 @@ following properties are supported:
 	  `"CocFloating"`.
 	- "title": Title text used by float window, default: `""`.
 	- "borderhighlight": Border highlight group of float window, default:
-	  `"CocFloating"`.
+	  `"CocFloatBorder"`.
 	- "close": Set to `true` to draw close icon.
 	- "maxWidth": Maximum width of float window, contains border.
 	- "maxHeight": Maximum height of float window, contains border.
@@ -693,7 +730,7 @@ CODELENS
 
 "codeLens.position"					*coc-config-codeLens-position*
 
-	Position of codeLens, requires nvim >= 0.6.0.
+	Display position of codeLens virtual text.
 
 	Scope: `resource`, default: `"top"`
 
@@ -1723,9 +1760,8 @@ SUGGEST
 	Configure style of popup menu and documentation window for completion,
 	see |coc-config-float|.
 
-	Note: some properties not work, including: "title", "focusable",
-	"close" and "maxHeight" (use 'pumheight' option for maximum height of
-	popup menu).
+	Note: some properties not work, including: "focusable", "close" and
+	"maxHeight" (use 'pumheight' option for maximum height of popup menu).
 
 	Note: "maxWidth" not works for popup menu, use
 	|coc-config-suggest-labelMaxLength| instead.
@@ -1816,11 +1852,11 @@ SUGGEST
 	used when not specified, see |coc-config-float|.
 
 	Available properties: "border", "rounded", "highlight",
-	"borderhighlight", "winblend" and "shadow".
+	"borderhighlight", "winblend", "title" and "shadow".
 
 	Note: 'winblend' option is used for custom popup menu when not
-	configured, use 'pumwidth' for minimal width of popup menu and
-	'pumheight' for maximum height of popup menu.
+	configured (neovim only), use 'pumwidth' for minimal width of popup
+	menu and 'pumheight' for maximum height of popup menu.
 
 	Scope: `application`, default: `null`
 
